@@ -1,5 +1,4 @@
 {
-  "homepage": "http://hoho0001.github.io/mad9135-c1-react-router",
   "name": "mad9135-c1-react-router",
   "version": "0.1.0",
   "private": true,
@@ -10,7 +9,10 @@
     "react-scripts": "3.2.0",
     "save-dev": "0.0.1-security"
   },
+  "homepage": "https://hoho0001.github.io/mad9135-c1-react-router",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
