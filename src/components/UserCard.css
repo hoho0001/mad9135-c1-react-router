@@ -1,0 +1,43 @@
+.UserCard {
+  display: flex;
+  margin: 0 0 1.25rem 0;
+  height: 180px;
+  /* border: 2px solid hsl(220, 15%, 46%); */
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 12px 24px 0 hsl(220, 15%, 88%), 0 3px 9px 0 hsl(220, 15%, 94%);
+}
+
+.user-avatar {
+  height: 180px;
+  width: 180px;
+  min-width: 180px;
+  object-fit: cover;
+}
+
+.user-avatar img {
+  height: 100%;
+  width: 100%;
+}
+
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+}
+.user-login {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: hsl(220, 15%, 46%);
+}
+.user-bio {
+  color: hsl(220, 0%, 23%)
+}

@@ -1,26 +1,42 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, NavLink, Switch} from 'react-router-dom'
+import Users from './components/Users'
+import Albums from './components/Albums'
+import Posts from './components/Posts'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+// import './App.css';
+
+class App extends React.Component {
+
+  render() {
+    
+    return (
+      <BrowserRouter>
+      <div className="App">
+        <nav>
+        <NavLink to='/users' >Users</NavLink>
+          <NavLink to={`/posts`} >Posts</NavLink>
+          <NavLink to={`/albums`}>Albums</NavLink>
+        </nav>
+        <Switch>
+          <Route exact path='/users' component={Users} />
+          <Route exact path='/posts' component={Posts} />
+          <Route path='/posts/:user' component={Posts} />
+          <Route exact path='/albums' component={Albums} />
+          <Route path='/albums/:user' component={Albums} /> 
+          <Route exact path='/' component={Users} />
+
+          {/* <Route exact path='/' render ={(props) => (
+            <Users list={this.state.list} />
+          )} /> */}
+        </Switch>
+      </div>
+      </BrowserRouter>
+
+    );
+  }
 }
 
 export default App;
