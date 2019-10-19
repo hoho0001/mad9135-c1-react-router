@@ -1,10 +1,11 @@
+// Lien Ho Hoang - 2019-10-19
 import React from 'react'
 
 function AlbumCard(props) {
   return (
-    <div className="AlbumCard">
+    <div className="UserCard">
       <div className="card-body">
-        <p className="album-name">
+        <p className="user-name">
           {props.album.title}
         </p>
       </div>

@@ -1,7 +1,8 @@
+/* Lien Ho Hoang - 2019-10-19 */
 .UserCard {
   display: flex;
   margin: 0 0 1.25rem 0;
-  height: 180px;
+  height: 150px;
   /* border: 2px solid hsl(220, 15%, 46%); */
   border-radius: 0.5rem;
   overflow: hidden;
@@ -9,10 +10,11 @@
 }
 
 .user-avatar {
-  height: 180px;
-  width: 180px;
-  min-width: 180px;
-  object-fit: cover;
+  height: 50px;
+  width: 100px;
+  min-width: 50px;
+  margin-top: auto;
+  margin-bottom: auto; 
 }
 
 .user-avatar img {
@@ -38,6 +40,35 @@
   font-weight: 400;
   color: hsl(220, 15%, 46%);
 }
-.user-bio {
+.user-email {
   color: hsl(220, 0%, 23%)
 }
+.link {
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: hsl(220, 15%, 46%);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: hsl(220, 15%, 46%);
+  box-shadow: 0 2px hsl(220, 15%, 46%);
+  transform: translateY(4px);
+}
+
+
+/* As elements are added to the DOM */

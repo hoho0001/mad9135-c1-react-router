@@ -1,10 +1,11 @@
+// Lien Ho Hoang - 2019-10-19
 import React from 'react'
 
 function PostCard(props) {
   return (
-    <div className="PostCard">
+    <div className="UserCard">
       <div className="card-body">
-        <p className="post-name">
+        <p className="user-name">
           {props.post.title}
         </p>
         <p>{props.post.body}</p>

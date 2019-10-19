@@ -1,3 +1,48 @@
-.App {
-  text-align: center;
+.Navigation {
+  text-align: right;
+  margin-right: 50px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.fade-appear {
+  opacity: 0.01;
+}
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: all 1200ms;
+}
+
+/* As elements are added to the DOM */
+.fade-enter {
+  opacity: 0.01;
+  transform: scale(1, 0);
+  overflow: hidden;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: scale(1, 1);
+  transition: opacity 1250ms ease-in, transform 1195ms ease-out;
+}
+
+/* As elements are removed from the DOM */
+.fade-leave {
+  opacity: 1;
+  height: 180px;
+  will-change: height;
+}
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  height: 2px;
+  color: transparent;
+  background-color: hsl(0, 85%, 40%);
+  border-top: 2px solid hsl(0, 85%, 40%);
+  border-radius: 0;
+  transition: 
+    opacity 1250ms ease-out, 
+    background-color 1195ms linear, 
+    height 1195ms ease-out,
+    color 1100ms linear,
+    border-top 1150ms linear,
+    border-radius 1150ms linear;
 }

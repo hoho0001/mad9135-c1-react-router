@@ -11,7 +11,8 @@ class RouterApiService {
   
   async fetchJson(uri, options = {}) {
     try {
-      const response = await fetch(`${this.baseUrl}${uri}`, { ...this.options, ...options }) //merge two objects
+      const response = await fetch(`${this.baseUrl}${uri}`, { ...this.options, ...options })  //merge two objects
+      .then (this.sleeper(1000))   //delay time to show Loading
       if (response.ok) {
         return await response.json()
       }
@@ -24,21 +25,25 @@ class RouterApiService {
   getUsers () {
     return this.fetchJson(`/users`)
   }
+  getUser (id) {
+    return this.fetchJson(`/users/${id}`)
+  }
 
-  getAlbums (user = null) {
-    if (user) {
-      return this.fetchJson(`/albums?userId=${user}`)
-    } else {
+  getAlbums () {
       return this.fetchJson(`/albums`)
-    }
+    
   }
-  getPosts (user = null) {
-    if (user) {
-      return this.fetchJson(`/posts?userId=${user}`)
-    } else {
+  getUserAlbums (user) {
+      return this.fetchJson(`/albums?userId=${user}`)
+  }
+
+  getPosts () {
       return this.fetchJson(`/posts`)
-    }
   }
+
+  getUserPosts (user) {
+    return this.fetchJson(`/posts?userId=${user}`)
+}
   sleeper(ms) {
     return function(x) {
       return new Promise(resolve => setTimeout(() => resolve(x), ms));

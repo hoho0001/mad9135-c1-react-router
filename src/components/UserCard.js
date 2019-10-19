@@ -1,24 +1,35 @@
+// Lien Ho Hoang - 2019-10-19
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { CSSTransitionGroup } from 'react-transition-group'
+
 import './UserCard.css'
+import icon from '../img/UserIcon.svg'
 
 function UserCard(props) {
   return (
-    <div
-      className="UserCard"
-      >
-      <div className="card-body">
-        <img src=""></img>
-        <p className="user-name">
-          {props.user.name}
-          <br />
-          
-        </p>
-        <p className="user-login">{props.user.username}</p>
-        <p className="">{props.user.email}</p>
-        <button onClick={() => props.handleGetPosts(props.user)}>Posts</button>
-        <button onClick={() => props.handleGetAlbums(props.user)}>Albums</button>
+    <CSSTransitionGroup component="div" className="CardList"
+        transitionName="fade"
+        transitionAppear={true}
+        transitionAppearTimeout={1200}
+        transitionEnterTimeout={1250}
+        transitionLeaveTimeout={1225}>
+<NavLink className="link" to={`/users/${props.user.id}`} >
+      <div className="UserCard">
+        <div className="user-avatar">
+          <img src={icon}></img>
+        </div>
+        <div className="card-body" >
+          <p className="user-name">
+            {props.user.name}
+            <br />
+          </p>
+          <p className="user-login">{props.user.username}</p>
+          <p className="user-email">{props.user.email}</p>
+        </div>
       </div>
-    </div>
+    </NavLink>    
+    </CSSTransitionGroup>
   );
 }
 

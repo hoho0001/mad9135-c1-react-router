@@ -1,0 +1,10 @@
+/* // Lien Ho Hoang - 2019-10-19 */
+.App-header {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(220,15%,50%);
+  color: hsl(220, 0%, 98%)
+}
