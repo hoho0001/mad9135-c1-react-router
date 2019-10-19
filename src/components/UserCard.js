@@ -1,6 +1,6 @@
 // Lien Ho Hoang - 2019-10-19
 import React from 'react'
-import baseURL from "./baseURL"
+import baseURL from "../baseURL"
 import { NavLink } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
