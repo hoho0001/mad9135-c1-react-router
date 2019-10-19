@@ -17,7 +17,7 @@ function UserCard(props) {
 <NavLink className="link" to={`/users/${props.user.id}`} >
       <div className="UserCard">
         <div className="user-avatar">
-          <img src={icon}></img>
+          <img src={icon} alt="User Icon"></img>
         </div>
         <div className="card-body" >
           <p className="user-name">
