@@ -1,5 +1,6 @@
 // Lien Ho Hoang - 2019-10-19
 import React from 'react'
+import baseURL from "./baseURL"
 import { NavLink } from 'react-router-dom'
 import { CSSTransitionGroup } from 'react-transition-group'
 
@@ -14,7 +15,7 @@ function UserCard(props) {
         transitionAppearTimeout={1200}
         transitionEnterTimeout={1250}
         transitionLeaveTimeout={1225}>
-<NavLink className="link" to={`/users/${props.user.id}`} >
+<NavLink className="link" to={`${baseURL}/users/${props.user.id}`} >
       <div className="UserCard">
         <div className="user-avatar">
           <img src={icon} alt="User Icon"></img>

@@ -1,6 +1,7 @@
 // Lien Ho Hoang - 2019-10-19
 import React from 'react';
 import { BrowserRouter, Route, NavLink, Switch } from 'react-router-dom'
+import baseURL from "./baseURL"
 import UserDetail from './components/UserDetail'
 import Users from './components/Users'
 import Albums from './components/Albums'
@@ -11,8 +12,6 @@ import './App.css'
 
 
 function App () {
-const baseURL = "/mad9135-c1-react-router"
-// const baseURL = ""
     return (
       <BrowserRouter>
         <div className="App">

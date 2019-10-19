@@ -1,5 +1,6 @@
 // Lien Ho Hoang - 2019-10-19
 import React from 'react'
+import baseURL from "./baseURL"
 import Loading from './Loading'
 import { NavLink } from 'react-router-dom'
 import RouterApiService from '../RouterApiService'
@@ -45,9 +46,9 @@ class UserDetail extends React.Component {
           <p className="">Company name: <b>{this.state.user.company.name}</b></p>
           <p className="">Address: <b>{this.state.user.address.suit} {this.state.user.address.street}, {this.state.user.address.city}, {this.state.user.address.zipcode}</b></p>
           <br></br>
-          <div><NavLink className="link" to={`/users/posts/${this.state.user.id}`} >
+          <div><NavLink className="link" to={`${baseURL}/users/posts/${this.state.user.id}`} >
             <button className="button">View Posts</button> </NavLink>
-            <NavLink className="link" to={`/users/albums/${this.state.user.id}`} >
+            <NavLink className="link" to={`${baseURL}/users/albums/${this.state.user.id}`} >
             <button className="button">View Albums</button> </NavLink></div>
         </div>
 
