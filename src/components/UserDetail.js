@@ -2,7 +2,6 @@
 import React from 'react'
 import Loading from './Loading'
 import { NavLink } from 'react-router-dom'
-
 import RouterApiService from '../RouterApiService'
 import AppHeader from './AppHeader'
 
@@ -19,11 +18,11 @@ class UserDetail extends React.Component {
   }
 
   getData = () => {
-    if (this.props.userId) {
-      rapi.getUser(this.props.userId)
+    // if (this.props.computeMatch.params.userId) {
+      rapi.getUser(this.props.match.params.userId)
         .then(data => this.setState({ user: data, loading: false }))
         .catch(error => this.setState({ error, loading: false }))
-    }
+    
   }
 
   componentDidMount = () => {

@@ -34,7 +34,7 @@ class Albums extends React.Component {
     let getAlbumList = (this.props.match.params.userId) ? rapi.getUserAlbums(this.props.match.params.userId) : rapi.getAlbums()
     getAlbumList
     .then(data => this.buildList(data))
-    .catch(error => this.setState({error}))
+    .catch(error => this.setState({error, loading: false}))
   }
 
   componentDidMount =  () => {

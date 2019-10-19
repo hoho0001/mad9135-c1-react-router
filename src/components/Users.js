@@ -4,11 +4,34 @@ import { CSSTransitionGroup } from 'react-transition-group'
 import AppHeader from './AppHeader'
 import UserCard from './UserCard'
 import Loading from './Loading'
+import RouterApiService from '../RouterApiService'
+
+const rapi = new RouterApiService()
 
 
-function Users(props) {
+class Users extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: [],
+      loading: true,
+      error: null
+    }
+  }
+  getData = () => {
+    rapi.getUsers()
+      .then(data => this.setState({ list: data, loading: false }))
+      .catch(error => this.setState({ error, loading: false }))
+  }
 
-  const userJsx = props.loading ? <Loading /> : props.list.map(user => (
+  componentDidMount = () => {
+    this.getData()
+  }
+
+  render(){
+
+
+  const userJsx = this.state.loading ? <Loading /> : this.state.list.map(user => (
     <UserCard
       key={user.id}
       user={user}
@@ -31,7 +54,7 @@ function Users(props) {
       </main> */}
     </div>
   )
-}
+}}
 
 
 export default Users
