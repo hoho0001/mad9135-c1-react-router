@@ -11,14 +11,14 @@ import './App.css'
 
 
 function App () {
-
+const baseURL = "/mad9135-c1-react-router"
     return (
       <BrowserRouter>
         <div className="App">
           <nav className="Navigation">
-            <NavLink to='/users' className="Navigation">Users</NavLink>
-            <NavLink to={`/posts`} className="Navigation">Posts</NavLink>
-            <NavLink to={`/albums`} >Albums</NavLink>
+            <NavLink to={`${baseURL}/users`} className="Navigation">Users</NavLink>
+            <NavLink to={`${baseURL}/posts`} className="Navigation">Posts</NavLink>
+            <NavLink to={`${baseURL}/albums`} >Albums</NavLink>
           </nav>
 
 
